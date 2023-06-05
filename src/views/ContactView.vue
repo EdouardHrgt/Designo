@@ -1,6 +1,7 @@
 <template>
-  <div class="home">
+  <div class="contact">
     <NavBar />
+    <h1>CONTACT</h1>
   </div>
 </template>
 
@@ -8,7 +9,7 @@
 import NavBar from '@/components/NavBar.vue';
 
 export default {
-  name: 'HomeView',
+  name: 'ContactView',
   components: {
     NavBar,
   },

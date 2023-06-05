@@ -1,6 +1,7 @@
 <template>
-  <div class="home">
+  <div class="company">
     <NavBar />
+    <h1>COMPANY</h1>
   </div>
 </template>
 
@@ -8,7 +9,7 @@
 import NavBar from '@/components/NavBar.vue';
 
 export default {
-  name: 'HomeView',
+  name: 'CompanyView',
   components: {
     NavBar,
   },

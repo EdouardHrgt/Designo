@@ -1,9 +1,7 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <main>
+    <router-view />
+  </main>
 </template>
 
 <style>
@@ -32,6 +30,10 @@
 
   --body-size: 16px;
   --body-line: 26px;
+
+  --navlinks-size: 14px;
+  --navlinks-line: 14px;
+  --navlinks-space: 2px;
 }
 
 * {
@@ -53,6 +55,10 @@ li {
 
 a {
   text-decoration: none;
+  color: var(--dark-grey);
+  font-size: var(--navlinks-size);
+  line-height: var(--navlinks-line);
+  letter-spacing: var(--navlinks-space);
 }
 
 button {
@@ -71,5 +77,25 @@ h3 {
 p,
 a {
   font-weight: 400;
+  font-size: var(--body-size);
+  line-height: var(--body-line);
+}
+
+main {
+  max-width: 90%;
+  margin: auto;
+  position: relative;
+  min-height: 100dvh;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 868px) {
+  main {
+    max-width: 100%;
+  }
 }
 </style>
