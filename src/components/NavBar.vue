@@ -41,12 +41,13 @@ export default {
 </script>
 
 <style scoped>
+header {
+  z-index: 10;
+  background-color: var(--white);
+}
 nav {
   justify-content: space-between;
   padding: 3rem 0;
-  position: fixed;
-  left: 5%;
-  right: 5%;
 }
 
 nav img {
@@ -77,13 +78,15 @@ ul a:hover {
 }
 
 @media screen and (max-width: 868px) {
-  nav {
+  header {
     left: 0;
     right: 0;
+    border: 3px solid yellowgreen;
   }
   ul {
     position: fixed;
-    top: 6rem;
+    z-index: 1;
+    top: 5.8rem;
     left: 0;
     right: 0;
     bottom: 0;
