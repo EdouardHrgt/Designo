@@ -38,6 +38,7 @@
               /></svg
           ></a>
         </div>
+        <div class="gallery-hover"></div>
       </div>
       <div class="gallery-right-col">
         <div class="app-design gal-flex">
@@ -55,6 +56,7 @@
                 /></svg
             ></a>
           </div>
+          <div class="gallery-hover"></div>
         </div>
         <div class="graphic-design gal-flex">
           <div class="gallery-txt">
@@ -71,6 +73,7 @@
                 /></svg
             ></a>
           </div>
+          <div class="gallery-hover"></div>
         </div>
       </div>
     </section>
@@ -87,11 +90,13 @@
             alt="someone working on a computer"
           />
         </div>
-        <h3 class="adjective-title">passionate</h3>
-        <p class="adjective-txt">
-          Each project starts with an in-depth brand research to ensure we only create products that
-          serve a purpose. We merge art, design, and technology into exciting new solutions.
-        </p>
+        <div class="adjective-infos">
+          <h3 class="adjective-title">passionate</h3>
+          <p class="adjective-txt">
+            Each project starts with an in-depth brand research to ensure we only create products
+            that serve a purpose. We merge art, design, and technology into exciting new solutions.
+          </p>
+        </div>
       </div>
       <div class="adjective">
         <div class="adjective-img">
@@ -105,12 +110,14 @@
             alt="someone working on a tablet"
           />
         </div>
-        <h3 class="adjective-title">resourceful</h3>
-        <p class="adjective-txt">
-          Everything that we do has a strategic purpose. We use an agile approach in all of our
-          projects and value customer collaboration. It guarantees superior results that fulfill our
-          clients’ needs.
-        </p>
+        <div class="adjective-infos">
+          <h3 class="adjective-title">resourceful</h3>
+          <p class="adjective-txt">
+            Everything that we do has a strategic purpose. We use an agile approach in all of our
+            projects and value customer collaboration. It guarantees superior results that fulfill
+            our clients’ needs.
+          </p>
+        </div>
       </div>
       <div class="adjective">
         <div class="adjective-img">
@@ -124,11 +131,14 @@
             alt="two persons handling a sign"
           />
         </div>
-        <h3 class="adjective-title">friendly</h3>
-        <p class="adjective-txt">
-          We are a group of enthusiastic folks who know how to put people first. Our success depends
-          on our customers, and we strive to give them the best experience a company can provide.
-        </p>
+        <div class="adjective-infos">
+          <h3 class="adjective-title">friendly</h3>
+          <p class="adjective-txt">
+            We are a group of enthusiastic folks who know how to put people first. Our success
+            depends on our customers, and we strive to give them the best experience a company can
+            provide.
+          </p>
+        </div>
       </div>
       <svg
         class="bg-circle-adjectives"
@@ -164,6 +174,12 @@ export default {
   --links-size: 15px;
   --links-space: 5px;
 }
+
+.adjectives,
+.gallery {
+  margin-top: 11rem;
+}
+
 .hero {
   background-color: var(--peach);
   border-radius: var(--radius);
@@ -197,7 +213,6 @@ export default {
 }
 
 .gallery {
-  margin-top: 11rem;
   display: flex;
   gap: 3rem;
   border-radius: var(--radius);
@@ -210,6 +225,8 @@ h2 {
   line-height: var(--h1-line);
   text-transform: uppercase;
   margin-bottom: 1rem;
+  z-index: 2;
+  position: relative;
 }
 .gallery-txt {
   text-align: center;
@@ -220,6 +237,8 @@ h2 {
   letter-spacing: 5px;
   color: var(--white);
   font-weight: 400;
+  z-index: 2;
+  position: relative;
 }
 .gal-flex {
   display: flex;
@@ -227,9 +246,20 @@ h2 {
   justify-content: center;
   cursor: pointer;
   border-radius: var(--radius);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
 }
-.gal-flex:hover {
-  opacity: 0.8;
+.gallery-hover {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-color: var(--peach);
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+.gal-flex:hover .gallery-hover {
+  opacity: 0.6;
 }
 .gallery-link svg {
   margin-left: 0.5rem;
@@ -258,8 +288,6 @@ h2 {
 
 /* ADJECTIVES */
 .adjectives {
-  border: 2px solid green;
-  margin-top: 11rem;
   justify-content: space-evenly;
   gap: 1.5rem;
   position: relative;
@@ -285,7 +313,7 @@ h2 {
   text-transform: uppercase;
   margin: 1.75rem 0;
 }
-.adjective p {
+.adjective-infos {
   max-width: 350px;
 }
 .bg-circle-adjectives {
@@ -303,9 +331,20 @@ h2 {
   .hero-img {
     right: -7.5rem;
   }
+  .gallery {
+    gap: 1.5rem;
+  }
 }
 
 @media screen and (max-width: 1024px) {
+  .bg-circle-adjectives,
+  .bg-circle {
+    display: none;
+  }
+  .adjectives,
+  .gallery {
+    margin-top: 7rem;
+  }
   .hero {
     padding: 5rem 1rem;
     flex-direction: column;
@@ -325,11 +364,87 @@ h2 {
     inset: unset;
     bottom: -23rem;
   }
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+  .graphic-design,
+  .app-design,
+  .web-design {
+    height: 200px;
+    width: 689px;
+    background-repeat: no-repeat;
+  }
+  .gallery-right-col {
+    gap: 1.5rem;
+  }
+  .web-design {
+    background-image: url(../assets/home/tablet/image-web-design.jpg);
+  }
+  .app-design {
+    background-image: url(../assets/home/tablet/image-app-design.jpg);
+  }
+  .graphic-design {
+    background-image: url(../assets/home/tablet/image-graphic-design.jpg);
+  }
+  .adjectives {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  .adjective {
+    text-align: start;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+  .adjective-infos {
+    max-width: 439px;
+  }
+  .adjective-title {
+    margin: 0.5rem 0;
+  }
 }
 
 @media screen and (max-width: 868px) {
   .hero {
     border-radius: 0;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .graphic-design,
+  .app-design,
+  .web-design {
+    height: 250px;
+    width: 327px;
+  }
+  .gallery-right-col {
+    gap: 1.5rem;
+  }
+  .web-design {
+    background-image: url(../assets/home/mobile/image-web-design.jpg);
+  }
+  .app-design {
+    background-image: url(../assets/home/mobile/image-app-design.jpg);
+  }
+  .graphic-design {
+    background-image: url(../assets/home/mobile/image-graphic-design.jpg);
+  }
+  h2 {
+    font-size: 1.75rem;
+    letter-spacing: 1.4px;
+    margin-bottom: 0.5rem;
+  }
+  .adjectives {
+    gap: 3rem;
+  }
+  .adjective {
+    text-align: center;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .adjective-infos {
+    padding: 0 1rem;
   }
 }
 </style>

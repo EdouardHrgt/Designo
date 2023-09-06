@@ -108,12 +108,22 @@ main {
   background-color: var(--white);
   border-radius: 5px;
   padding: 0.82rem 1.75rem;
+  transition: 0.3s;
 }
 
 .btn-p {
   color: var(--dark-grey);
   text-transform: uppercase;
   font-size: var(--body-size);
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--peach-light);
+}
+
+.btn:hover .btn-p {
+  color: var(--white);
 }
 
 @media screen and (max-width: 868px) {

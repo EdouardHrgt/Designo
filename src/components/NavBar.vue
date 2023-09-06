@@ -5,7 +5,14 @@
         <router-link to="/"
           ><img src="../assets/shared/desktop/logo-dark.png" alt="Designo"
         /></router-link>
-        <ul class="flex" :class="{ active: isOpen }" @click="isOpen = !isOpen">
+        <ul
+          class="flex"
+          :class="{ active: isOpen }"
+          @click="isOpen = !isOpen"
+          @wheel.prevent
+          @touchmove.prevent
+          @scroll.prevent
+        >
           <li><router-link to="/company">our company</router-link></li>
           <li><router-link to="/locations">locations</router-link></li>
           <li><router-link to="/contact">contact</router-link></li>
@@ -81,16 +88,15 @@ ul a:hover {
   header {
     left: 0;
     right: 0;
-    border: 3px solid yellowgreen;
   }
   ul {
     position: fixed;
     z-index: 1;
-    top: 5.8rem;
+    top: 5.6rem;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: hsla(270, 3%, 11%, 0.8);
+    background-color: hsla(270, 3%, 11%, 0.95);
     flex-direction: column;
     align-items: flex-start;
     padding-top: 3rem;
