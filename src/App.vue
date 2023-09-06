@@ -14,6 +14,7 @@
   --dark-grey: #333136;
   --light-grey: #f1f3f5;
   --white: #ffff;
+  --line: #979797;
 
   /* FONTS */
   --h1-size: 48px;
@@ -115,7 +116,9 @@ main {
   color: var(--dark-grey);
   text-transform: uppercase;
   font-size: var(--body-size);
+  font-weight: bolder;
   transition: 0.3s;
+  letter-spacing: 0.8px;
 }
 
 .btn:hover {

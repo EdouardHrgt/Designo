@@ -154,16 +154,21 @@
         />
       </svg>
     </section>
+    <HeroBar />
+    <FooterBar />
   </div>
 </template>
 
 <script>
 import NavBar from '@/components/NavBar.vue';
-
+import HeroBar from '@/components/HeroBar.vue';
+import FooterBar from '@/components/FooterBar.vue';
 export default {
   name: 'HomeView',
   components: {
     NavBar,
+    HeroBar,
+    FooterBar,
   },
 };
 </script>
@@ -178,6 +183,10 @@ export default {
 .adjectives,
 .gallery {
   margin-top: 11rem;
+}
+
+.adjectives {
+  margin-bottom: 11rem;
 }
 
 .hero {
