@@ -50,11 +50,17 @@ h2 {
   margin-bottom: 2rem;
 }
 
+@media screen and (max-width: 1650px) {
+  .hero {
+    max-width: 95%;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .hero {
     flex-direction: column;
     text-align: center;
-      margin-bottom: -4.5rem;
+    margin-bottom: -4.5rem;
   }
   h2 {
     margin-bottom: 1rem;
