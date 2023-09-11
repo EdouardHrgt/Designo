@@ -21,7 +21,7 @@
             </p>
           </div>
         </div>
-        <div class="location-map"></div>
+        <div class="location-map" :class="l.img"></div>
       </div>
     </section>
     <HeroBar />
@@ -47,6 +47,7 @@ export default {
         {
           country: 'canada',
           class: 'ca',
+          img: 'ca-img',
           infos: {
             office: 'Designo Central Office',
             add1: '3886 Wellington Street',
@@ -58,6 +59,7 @@ export default {
         {
           country: 'australia',
           class: 'au',
+          img: 'au-img',
           infos: {
             office: 'Designo AU Office',
             add1: '19 Balonne Street',
@@ -69,6 +71,7 @@ export default {
         {
           country: 'United Kingdom',
           class: 'uk',
+          img: 'uk-img',
           infos: {
             office: 'Designo UK Office',
             add1: '13  Colorado Way',
@@ -119,11 +122,84 @@ export default {
 }
 .location-map {
   width: 350px;
-  background-image: url(../assets/locations/desktop/image-map-canada.png);
   border-radius: var(--radius);
   height: inherit;
 }
 .au {
   flex-direction: row-reverse;
+}
+.au-img {
+  background-image: url(../assets/locations/desktop/image-map-australia.png);
+}
+.ca-img {
+  background-image: url(../assets/locations/desktop/image-map-canada.png);
+}
+.uk-img {
+  background-image: url(../assets/locations/desktop/image-map-united-kingdom.png);
+}
+
+@media screen and (max-width: 1250px) {
+  .location-txt {
+    width: auto;
+    padding: 0 5rem;
+  }
+  .location-txt-infos {
+    gap: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .locations {
+    margin: 0;
+    overflow: hidden;
+  }
+  .location {
+    height: auto;
+    flex-direction: column-reverse;
+    margin: 7rem 0;
+    gap: 2rem;
+  }
+  .location-txt {
+    width: 100%;
+    padding: 6rem;
+    max-width: 689px;
+  }
+  .location-map {
+    width: 100%;
+    max-width: 689px;
+    background-repeat: no-repeat;
+    min-height: 326px;
+    display: block;
+  }
+  .au-img {
+    background-image: url(../assets/locations/tablet/image-map-australia.png);
+  }
+  .ca-img {
+    background-image: url(../assets/locations/tablet/image-map-canada.png);
+  }
+  .uk-img {
+    background-image: url(../assets/locations/tablet/image-map-uk.png);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .location-txt,
+  .location-map {
+    border-radius: 0;
+  }
+  .location {
+    gap: 0;
+    margin: 3.5rem 0;
+  }
+  .location-txt {
+    align-items: center;
+    padding: 4rem 0;
+  }
+  .location-txt-infos {
+    margin-top: 1rem;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
 }
 </style>

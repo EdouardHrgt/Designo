@@ -69,4 +69,10 @@ h2 {
     margin-bottom: 1rem;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .hero {
+    padding: 3.7rem 2rem;
+  }
+}
 </style>
