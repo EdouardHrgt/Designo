@@ -87,6 +87,8 @@ export default {
 footer {
   background-color: var(--black);
   padding: 7rem 0 3rem 0;
+  z-index: 2;
+  position: relative;
 }
 .footer-infos,
 .links {
