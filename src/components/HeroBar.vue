@@ -31,7 +31,7 @@ export default {
   background-position: right;
   margin-bottom: -3.5rem;
   position: relative;
-  z-index: 1;
+  z-index: 5;
 }
 
 .hero h2,
