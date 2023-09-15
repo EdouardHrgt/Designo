@@ -26,7 +26,7 @@
       <div class="web-design gal-flex">
         <div class="gallery-txt">
           <h2>web design</h2>
-          <a href="#" class="gallery-link"
+          <router-link to="/web-design" class="gallery-link"
             >view projects
             <svg width="7" height="10" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -36,7 +36,7 @@
                 fill="none"
                 fill-rule="evenodd"
               /></svg
-          ></a>
+          ></router-link>
         </div>
         <div class="gallery-hover"></div>
       </div>

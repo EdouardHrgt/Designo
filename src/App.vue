@@ -9,6 +9,7 @@
 :root {
   /* COLORS */
   --peach: #e7816b;
+  --peach-trans: rgba(255, 173, 155, 0.8);
   --peach-light: #ffad9b;
   --black: #1d1c1e;
   --dark-grey: #333136;

@@ -22,6 +22,21 @@ const routes = [
     name: 'contact',
     component: () => import('../views/ContactView.vue'),
   },
+  {
+    path: '/web-design',
+    name: 'Webdesign',
+    component: () => import('../views/WebDesignView.vue'),
+  },
+  {
+    path: '/graphic-design',
+    name: 'Graphicdesign',
+    component: () => import('../views/GraphicDesignView.vue'),
+  },
+  {
+    path: '/App-design',
+    name: 'Appdesign',
+    component: () => import('../views/AppDesignView.vue'),
+  },
 ];
 
 const router = createRouter({
