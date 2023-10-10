@@ -44,7 +44,7 @@
         <div class="app-design gal-flex">
           <div class="gallery-txt">
             <h2>app design</h2>
-            <a href="#" class="gallery-link"
+            <router-link to="/app-design" class="gallery-link"
               >view projects
               <svg width="7" height="10" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -54,14 +54,14 @@
                   fill="none"
                   fill-rule="evenodd"
                 /></svg
-            ></a>
+            ></router-link>
           </div>
           <div class="gallery-hover"></div>
         </div>
         <div class="graphic-design gal-flex">
           <div class="gallery-txt">
             <h2>graphic design</h2>
-            <a href="#" class="gallery-link"
+            <router-link to="/graphic-design" class="gallery-link"
               >view projects
               <svg width="7" height="10" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -71,7 +71,7 @@
                   fill="none"
                   fill-rule="evenodd"
                 /></svg
-            ></a>
+            ></router-link>
           </div>
           <div class="gallery-hover"></div>
         </div>
@@ -454,6 +454,10 @@ h2 {
   }
   .adjective-infos {
     padding: 0 1rem;
+  }
+  h1 {
+    font-size: var(--h2-size);
+    width: 22rem;
   }
 }
 </style>

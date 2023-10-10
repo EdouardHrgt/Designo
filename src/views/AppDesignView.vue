@@ -308,5 +308,8 @@ h3 {
   .links {
     margin-bottom: 5rem;
   }
+  h3 {
+    font-size: 30px;
+  }
 }
 </style>

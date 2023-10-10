@@ -216,12 +216,18 @@ input::placeholder {
   .contact {
     align-items: center;
     padding: 5rem 4rem;
+    width: 95%;
+    margin: auto;
+    overflow: hidden;
   }
   .contact-txt {
     text-align: center;
   }
   #sub-btn {
     margin: 2rem auto 0;
+  }
+  .err-ms {
+    right: 1rem;
   }
 }
 </style>
